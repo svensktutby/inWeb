@@ -1,0 +1,14 @@
+.header {
+  margin-top: 2rem;
+}
+
+.header__inner {
+  padding: 0.8rem 1.4rem;
+  border-radius: $radius;
+  background-color: $white;
+  box-shadow: $shadow;
+}
+
+.header__row {
+  align-items: center;
+}
