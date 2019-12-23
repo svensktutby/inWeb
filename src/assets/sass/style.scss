@@ -1,0 +1,34 @@
+@import "vars";
+
+
+/* Default styles */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+body {
+  margin: 0;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+  color: $black;
+  background-color: $gray;
+}
+
+
+/* Bootstrap */
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/grid";
+
+
+/* Blocks */
+@import "blocks/header";
