@@ -25,20 +25,8 @@
 
 .social__icon {
   display: block;
-  width: 30px;
-  height: 30px;
 
   transition: fill 0.1s;
 
   fill: #ababab;
-
-  &--fb {
-    width: 22px;
-    height: 22px;
-  }
-
-  &--ins {
-    width: 24px;
-    height: 24px;
-  }
 }

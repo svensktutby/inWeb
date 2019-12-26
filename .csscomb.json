@@ -223,6 +223,7 @@
       "background-attachment",
       "box-decoration-break",
       "background-blend-mode",
+      "fill",
       "border",
       "border-width",
       "border-style",
