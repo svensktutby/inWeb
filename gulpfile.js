@@ -1,43 +1,43 @@
-"use strict";
+'use strict';
 
-const {src, dest} = require("gulp");
-const gulp = require("gulp");
-const autoprefixer = require("gulp-autoprefixer");
-const cssbeautify = require("gulp-cssbeautify");
+const {src, dest} = require('gulp');
+const gulp = require('gulp');
+const autoprefixer = require('gulp-autoprefixer');
+const cssbeautify = require('gulp-cssbeautify');
 const removeComments = require('gulp-strip-css-comments');
-const rename = require("gulp-rename");
-const sass = require("gulp-sass");
-const cssnano = require("gulp-cssnano");
-const rigger = require("gulp-rigger");
-const uglify = require("gulp-uglify");
-const plumber = require("gulp-plumber");
-const imagemin = require("gulp-imagemin");
-const del = require("del");
-const panini = require("panini");
-const browsersync = require("browser-sync").create();
+const rename = require('gulp-rename');
+const sass = require('gulp-sass');
+const cssnano = require('gulp-cssnano');
+const rigger = require('gulp-rigger');
+const uglify = require('gulp-uglify');
+const plumber = require('gulp-plumber');
+const imagemin = require('gulp-imagemin');
+const del = require('del');
+const panini = require('panini');
+const browsersync = require('browser-sync').create();
 
 
 /* Paths */
 var path = {
     build: {
-        html: "build/",
-        js: "build/js/",
-        css: "build/css/",
-        images: "build/img/"
+        html: 'build/',
+        js: 'build/js/',
+        css: 'build/css/',
+        images: 'build/img/'
     },
     src: {
-        html: "src/*.html",
-        js: "src/assets/js/*.js",
-        css: "src/assets/sass/style.scss",
-        images: "src/assets/img/**/*.{jpg,png,svg,gif,ico}"
+        html: 'src/*.html',
+        js: 'src/assets/js/*.js',
+        css: 'src/assets/sass/style.scss',
+        images: 'src/assets/img/**/*.{jpg,png,svg,gif,ico}'
     },
     watch: {
-        html: "src/**/*.html",
-        js: "src/assets/js/**/*.js",
-        css: "src/assets/sass/**/*.scss",
-        images: "src/assets/img/**/*.{jpg,png,svg,gif,ico}"
+        html: 'src/**/*.html',
+        js: 'src/assets/js/**/*.js',
+        css: 'src/assets/sass/**/*.scss',
+        images: 'src/assets/img/**/*.{jpg,png,svg,gif,ico}'
     },
-    clean: "./build"
+    clean: './build'
 }
 
 
@@ -45,7 +45,7 @@ var path = {
 function browserSync(done) {
     browsersync.init({
         server: {
-            baseDir: "./build/"
+            baseDir: './build/'
         },
         port: 3000
     });
@@ -57,7 +57,7 @@ function browserSyncReload(done) {
 
 function html() {
     panini.refresh();
-    return src(path.src.html, { base: "src/" })
+    return src(path.src.html, { base: 'src/' })
         .pipe(plumber())
         .pipe(panini({
             root: 'src/',
@@ -71,7 +71,7 @@ function html() {
 }
 
 function css() {
-    return src(path.src.css, { base: "src/assets/sass/" })
+    return src(path.src.css, { base: 'src/assets/sass/' })
         .pipe(plumber())
         .pipe(sass())
         .pipe(autoprefixer({
@@ -87,8 +87,8 @@ function css() {
         }))
         .pipe(removeComments())
         .pipe(rename({
-            suffix: ".min",
-            extname: ".css"
+            suffix: '.min',
+            extname: '.css'
         }))
         .pipe(dest(path.build.css))
         .pipe(browsersync.stream());
@@ -101,8 +101,8 @@ function js() {
         .pipe(gulp.dest(path.build.js))
         .pipe(uglify())
         .pipe(rename({
-            suffix: ".min",
-            extname: ".js"
+            suffix: '.min',
+            extname: '.js'
         }))
         .pipe(dest(path.build.js))
         .pipe(browsersync.stream());
