@@ -34,6 +34,9 @@ body {
 @import "../../../node_modules/bootstrap/scss/grid";
 @import "../../../node_modules/bootstrap/scss/modal";
 
+/* Vendor libs */
+@import "vendor/slick";
+
 
 /* Blocks */
 @import "blocks/page";
@@ -49,6 +52,7 @@ body {
 @import "blocks/circle";
 @import "blocks/social";
 @import "blocks/services";
+@import "blocks/portfolio";
 @import "blocks/footer";
 @import "blocks/modal";
 @import "blocks/form";
