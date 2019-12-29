@@ -64,6 +64,7 @@
   float: left;
   height: 100%;
   min-height: 1px;
+  padding: 0 1rem;
   [dir="rtl"] & {
     float: right;
   }
@@ -96,4 +97,48 @@
 }
 .slick-arrow.slick-hidden {
   display: none;
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: -3rem;
+  left: 0;
+  z-index: 2;
+
+  width: 100%;
+  margin: 0;
+  padding: 0 0 0 1rem;
+
+  list-style-type: none;
+  text-align: center;
+}
+
+.slick-dots li {
+  display: inline-block;
+  margin: 0 0.25rem;
+
+  vertical-align: middle;
+
+  &.slick-active {
+    button {
+      background-color: $pink;
+    }
+  }
+}
+
+.slick-dots button {
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+
+  font-size: 0;
+  color: transparent;
+
+  background-color: #c5c5c5;
+  border: 0;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
 }

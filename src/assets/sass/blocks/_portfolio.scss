@@ -1,3 +1,37 @@
+.portfolio {
+  position: relative;
+}
+
+.portfolio__slider {
+  position: relative;
+
+  height: 270px;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: $white;
+    background-image: url("../img/ajax-loader.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &.slick-initialized {
+    overflow: visible;
+    &::after {
+      display: none;
+    }
+  }
+}
+
 .portfolio__item {
   position: relative;
 
@@ -46,4 +80,44 @@
   transition: transform 0.2s linear;
 
   pointer-events: none;
+}
+
+.portfolio__arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+
+  padding: 0;
+
+  background: none;
+  border: 0;
+  cursor: pointer;
+
+  &:hover {
+    .portfolio__arrow-icon {
+      fill: $pink;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &--prev {
+    left: -2rem;
+
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  &--next {
+    right: -2rem;
+
+    transform: translateY(-50%);
+  }
+}
+
+.portfolio__arrow-icon {
+  fill: #c5c5c5;
+
+  transition: fill 0.1s linear;
 }
