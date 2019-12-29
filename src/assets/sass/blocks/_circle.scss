@@ -12,6 +12,14 @@
   box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.15);
 
   animation: circle-radius 12s alternate infinite;
+
+  @media (max-width: $breakpoint_xl) {
+    right: 0;
+  }
+
+  @media (max-width: $breakpoint_lg) {
+    display: none;
+  }
 }
 
 @keyframes circle-radius {

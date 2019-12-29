@@ -13,3 +13,26 @@
 .header__row {
   align-items: center;
 }
+
+.header__col {
+  &--logo {
+    @media (max-width: $breakpoint_lg) {
+      order: 1;
+      width: 50%;
+    }
+  }
+
+  &--nav {
+    @media (max-width: $breakpoint_lg) {
+      order: 3;
+      padding-top: 1rem;
+    }
+  }
+
+  &--lang {
+    @media (max-width: $breakpoint_lg) {
+      order: 2;
+      width: 50%;
+    }
+  }
+}

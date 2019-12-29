@@ -49,6 +49,11 @@
       transform: translateY(0);
     }
   }
+
+
+  @media (max-width: $breakpoint_md) {
+    margin: 0 auto;
+  }
 }
 
 .portfolio__link {
@@ -113,6 +118,11 @@
     right: -2rem;
 
     transform: translateY(-50%);
+  }
+
+
+  @media (max-width: $breakpoint_md) {
+    display: none;
   }
 }
 

@@ -1,8 +1,21 @@
 .nav {
   display: flex;
+  flex-wrap: wrap;
 
   font-weight: 500;
   font-size: 1rem;
+
+  @media (max-width: $breakpoint_lg) {
+    justify-content: center;
+  }
+
+  @media (max-width: $breakpoint_md) {
+    justify-content: space-around;
+  }
+
+  @media (max-width: $breakpoint_sm) {
+    flex-direction: column;
+  }
 }
 
 .nav__link {

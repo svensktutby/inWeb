@@ -2,6 +2,18 @@
   margin-bottom: 2rem;
 }
 
+.services__col {
+  @media (max-width: $breakpoint_lg) {
+    margin-bottom: 2rem;
+  }
+
+  &:last-child {
+    @media (max-width: $breakpoint_lg) {
+      margin-bottom: 0;
+    }
+  }
+}
+
 .services__item {
   position: relative;
 
